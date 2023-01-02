@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { List } from "components";
 import data from "./data";
-import List from "./List";
 function App() {
   const [people, setPeople] = useState([...data]);
   const isEmpty = people.length === 0;
   const newPeopleState = isEmpty ? data : [];
 
-  const removeItem = (index) => {
+  const removeItem = (index: number) => {
     const currentData = [...people];
     currentData.splice(index, 1);
     setPeople(currentData);
