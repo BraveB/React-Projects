@@ -2,11 +2,11 @@
 
 #### React Course
 
-[My React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
+[Josh Milga React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
 
 #### Support
 
-Find the Content Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
+Find the Content Useful? [You can always buy Josh Milga a coffee](https://www.buymeacoffee.com/johnsmilga)
 
 #### Tutorial Video
 
@@ -56,7 +56,7 @@ Find the Content Useful? [You can always buy me a coffee](https://www.buymeacoff
 
 ## Advanced Projects (Course Exclusive)
 
-[My React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
+[Josh Milga React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
 
 16. Markdown Preview
 17. Random Person
