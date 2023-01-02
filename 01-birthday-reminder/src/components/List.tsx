@@ -1,9 +1,9 @@
-import React from "react";
-
-const List = ({ people, remove }) => {
+import { ListProps, User } from "interfaces";
+import React, { FC } from "react";
+export const List: FC<ListProps> = ({ people, remove }) => {
   return (
     <>
-      {people.map((person, index) => {
+      {people.map((person: User, index: number) => {
         const { id, name, age, image } = person;
         return (
           <article key={id} className="person">
