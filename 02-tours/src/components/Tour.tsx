@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { TourProps } from "interfaces";
+import React, { FC, useState } from "react";
 
-const Tour = ({ id, image, info, price, name, removeTour }) => {
+const Tour: FC<TourProps> = ({ id, image, info, price, name, removeTour }) => {
   const [readMore, setReadMore] = useState(false);
 
   return (

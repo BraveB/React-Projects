@@ -1,6 +1,8 @@
-import React from "react";
+import { ToursProps } from "interfaces";
+import React, { FC } from "react";
 import Tour from "./Tour";
-const Tours = ({ tours, removeTour }) => {
+
+export const Tours: FC<ToursProps> = ({ tours, removeTour }) => {
   return (
     <section>
       <div className="title">
@@ -15,5 +17,3 @@ const Tours = ({ tours, removeTour }) => {
     </section>
   );
 };
-
-export default Tours;
