@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { FC } from "react";
 
-const Loading = () => {
+export const Loading: FC = () => {
   return (
     <div className="loading">
       <h1>loading...</h1>
     </div>
   );
 };
-
-export default Loading;
