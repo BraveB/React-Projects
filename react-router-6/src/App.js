@@ -6,7 +6,9 @@ import Error from "./pages/Error";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Products from "./pages/Products";
+import { ProtectedRoute } from "./pages/ProtectedRoute";
 import SharedLayout from "./pages/SharedLayout";
+import SharedProductsLayout from "./pages/SharedProductsLayout";
 import SingleProduct from "./pages/SingleProduct";
 
 function App() {
@@ -17,10 +19,19 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="products" element={<Products />} />
-          <Route path="products/:productId" element={<SingleProduct />} />
+          <Route path="products" element={<SharedProductsLayout />}>
+            <Route index element={<Products />} />
+            <Route path=":productId" element={<SingleProduct />} />
+          </Route>
           <Route path="login" element={<Login setUser={setUser} />} />
-          <Route path="dashboard" element={<Dashboard user={user} />} />
+          <Route
+            path="dashboard"
+            element={
+              <ProtectedRoute user={user}>
+                <Dashboard user={user} />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
