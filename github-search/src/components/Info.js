@@ -1,11 +1,19 @@
-import React from 'react';
-import { GithubContext } from '../context/context';
-import styled from 'styled-components';
-import { GoRepo, GoGist } from 'react-icons/go';
-import { FiUsers, FiUserPlus } from 'react-icons/fi';
+import React from "react";
+import { GithubContext } from "../context/context";
+import styled from "styled-components";
+import { GoRepo, GoGist } from "react-icons/go";
+import { FiUsers, FiUserPlus } from "react-icons/fi";
 
 const UserInfo = () => {
-  return <h2>user info component</h2>;
+  const data = React.useContext(GithubContext);
+  console.log(data, typeof data);
+  return (
+    <Wrapper>
+      <div className="container">
+        <h2>Info:{data && "hey"}</h2>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
