@@ -16,6 +16,7 @@ const GithubProvider = ({ children }) => {
   const [requests, setRequests] = useState(0);
   const [loading, setIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: "" });
+
   const searchGithubUser = async (user) => {
     toggleError();
     setIsLoading(true);
@@ -24,6 +25,13 @@ const GithubProvider = ({ children }) => {
     );
     if (response) {
       setGithubUser(response.data);
+      const { login, followers_url } = response.data;
+      axios(`${rootUrl}/users/${login}/repos?per_page=100`).then((response) => {
+        setRepos(response.data);
+      });
+      axios(`${rootUrl}/users/${login}/followers`).then((response) => {
+        setFollowers(response.data);
+      });
     } else {
       toggleError(true, "there is not user with that user name");
     }
