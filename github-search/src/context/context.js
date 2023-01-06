@@ -28,6 +28,7 @@ const GithubProvider = ({ children }) => {
       toggleError(true, "there is not user with that user name");
     }
     setIsLoading(false);
+    checkRequest();
   };
   const checkRequest = () => {
     axios(`${rootUrl}/rate_limit`)
