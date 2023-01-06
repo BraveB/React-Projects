@@ -3,17 +3,22 @@ import styled from "styled-components";
 import { MdSearch } from "react-icons/md";
 import { GithubContext } from "../context/context";
 const Search = () => {
-  const { requests } = useContext(GithubContext);
+  const { requests, error, searchGithubUser } = useContext(GithubContext);
   const [user, setUser] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     if (user) {
-      console.log(user);
+      searchGithubUser(user);
     }
   };
   return (
     <section className="section">
       <Wrapper className="section-center">
+        {error.show && (
+          <ErrorWrapper>
+            <p>{error.msg}</p>
+          </ErrorWrapper>
+        )}
         <form onSubmit={handleSubmit} className="form">
           <div className="form-control">
             <MdSearch />
