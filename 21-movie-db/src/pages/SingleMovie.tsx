@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { FC } from "react";
 import { useParams, Link } from "react-router-dom";
-import { API_ENDPOINT, useFetch } from "./../hooks/useFetch";
+// import { API_ENDPOINT, useFetch } from "../hooks/useFetch";
 
-const SingleMovie = () => {
+export const SingleMovie: FC = () => {
   const { id } = useParams();
-  const { isLoading, error, data: movie } = useFetch(`&i=${id}`);
+  // const { isLoading, error, data: movie } = useFetch(`&i=${id}`);
 
+  const isLoading = false;
+  const error = { show: true, msg: "mensaje" };
+  const movie = { Poster: "", Title: "titulo", Plot: "jaja", Year: "52" };
   if (isLoading) return <div className="loading">loading...</div>;
   if (error.show)
     return (
