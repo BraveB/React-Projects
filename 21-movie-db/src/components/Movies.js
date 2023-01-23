@@ -9,7 +9,7 @@ const Movies = () => {
   if (isLoading) return <div className="loading">Loading...</div>;
   return (
     <section className="movies">
-      {movies?.map((movie) => {
+      {movies.map((movie) => {
         const { imdbID: id, Poster: poster, Title: title, Year: year } = movie;
         return (
           <Link to={`/movies/${id}`} key={id} className="movie">
