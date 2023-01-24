@@ -8,6 +8,7 @@ export const movieMapper = (list: any) => {
         year: item.Year,
         id: item.imdbID,
         poster: item.Poster,
+        plot: item.Plot,
       }
   );
 };

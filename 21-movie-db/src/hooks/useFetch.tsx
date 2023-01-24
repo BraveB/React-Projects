@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Error } from "../interfaces/Error";
 import { Movie } from "../interfaces/Movie";
 import { movieMapper } from "../utils/MovieHelper";
@@ -7,7 +7,7 @@ export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT
 export const useFetch = (urlParams: string) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error>({ show: false, msg: "" });
-  const [data, setData] = useState<Movie>();
+  const [data, setData] = useState<Movie[]>([]);
 
   const fetchMovies = async (url: string) => {
     setIsLoading(true);

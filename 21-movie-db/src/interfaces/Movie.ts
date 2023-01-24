@@ -3,4 +3,5 @@ export interface Movie {
   year: string;
   id: string;
   poster: string;
+  plot: string;
 }
