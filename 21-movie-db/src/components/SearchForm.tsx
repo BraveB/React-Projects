@@ -1,10 +1,8 @@
 import React from "react";
-import { useState } from "react";
-// import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../context";
+
 export const SearchForm = () => {
-  // const { query, error, setQuery } = useGlobalContext();
-  const [query, setQuery] = useState("he");
-  const error = { show: true, msg: "error de mientras" };
+  const { query, error, setQuery } = useGlobalContext();
   return (
     <form className="search-form" onSubmit={(e) => e.preventDefault()}>
       <h2>Search movie</h2>

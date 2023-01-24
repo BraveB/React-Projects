@@ -1,19 +1,10 @@
 import React, { useState, useContext, Dispatch, ReactNode } from "react";
 import { useFetch } from "./hooks/useFetch";
-import { Error } from "./interfaces/Error";
-import { Movie } from "./interfaces/Movie";
+import { AppProviderProps } from "./interfaces/AppProviderProps";
+import { GlobalContext } from "./interfaces/GlobalContext";
+import { initialGlobalContext } from "./utils/constants";
 
-export interface GlobalContext {
-  query: string;
-  setQuery: Dispatch<string>;
-  error?: Error;
-  movies?: Movie[];
-  isLoading: boolean;
-}
-interface AppProviderProps {
-  children: ReactNode;
-}
-const AppContext = React.createContext<GlobalContext | null>(null);
+const AppContext = React.createContext<GlobalContext>(initialGlobalContext);
 
 const AppProvider = ({ children }: AppProviderProps) => {
   const [query, setQuery] = useState("sup");
@@ -24,7 +15,7 @@ const AppProvider = ({ children }: AppProviderProps) => {
     </AppContext.Provider>
   );
 };
-// make sure use
+
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };
