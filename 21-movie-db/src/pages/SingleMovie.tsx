@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "hooks";
 
 export const SingleMovie: FC = () => {
   const { id } = useParams();
@@ -32,5 +32,3 @@ export const SingleMovie: FC = () => {
     </section>
   );
 };
-
-export default SingleMovie;

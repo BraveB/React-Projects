@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Movie } from "../interfaces/Movie";
 import { API_ENDPOINT, initialError } from "../utils/constants";
+import { Movie } from "interfaces";
 import { movieMapper } from "../utils/MovieHelper";
 
 export const useFetch = (urlParams: string) => {

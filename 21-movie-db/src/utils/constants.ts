@@ -1,5 +1,4 @@
-import { Error } from "../interfaces/Error";
-import { GlobalContext } from "../interfaces/GlobalContext";
+import { Error, GlobalContext } from "interfaces";
 
 export const initialError: Error = { show: false, msg: "" };
 export const initialGlobalContext: GlobalContext = {

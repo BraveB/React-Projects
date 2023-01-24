@@ -1,12 +1,11 @@
 import React from "react";
-import { SearchForm } from "../components/SearchForm";
-import { Movies } from "../components/Movies";
+import { Search, Movies } from "components";
 import { FC } from "react";
 
 export const Home: FC = () => {
   return (
     <main>
-      <SearchForm />
+      <Search />
       <Movies />
     </main>
   );

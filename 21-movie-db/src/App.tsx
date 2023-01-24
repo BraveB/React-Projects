@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { SingleMovie as Movie } from "./pages/SingleMovie";
+import { Home, SingleMovie as Movie } from "pages";
 
 export const App: FC = () => {
   return (

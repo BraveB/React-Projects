@@ -1,4 +1,4 @@
-import { Movie } from "../interfaces/Movie";
+import { Movie } from "interfaces";
 
 export const movieMapper = (list: any) => {
   if (!list.length)

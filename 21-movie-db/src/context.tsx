@@ -1,8 +1,7 @@
-import React, { useState, useContext, Dispatch, ReactNode } from "react";
+import React, { useState, useContext } from "react";
 import { useFetch } from "./hooks/useFetch";
-import { AppProviderProps } from "./interfaces/AppProviderProps";
-import { GlobalContext } from "./interfaces/GlobalContext";
-import { initialGlobalContext } from "./utils/constants";
+import { AppProviderProps, GlobalContext } from "interfaces";
+import { initialGlobalContext } from "utils";
 
 const AppContext = React.createContext<GlobalContext>(initialGlobalContext);
 

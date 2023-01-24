@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
-import { Movie } from "../interfaces/Movie";
 import { url } from "../utils/constants";
+import { Movie } from "interfaces";
 
 export const Movies: FC = () => {
   const { movies, isLoading } = useGlobalContext();
