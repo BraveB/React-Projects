@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "jsx": "preserve",
+    "module": "commonjs",
+    "baseUrl": "src",
+    "paths": {
+      "components": ["components/index"],
+      "hooks": ["hooks/index"],
+      "interfaces": ["interfaces/index"],
+      "pages": ["pages/index"],
+      "utils": ["utils/index"]
+    },
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "src/**/*.spec.ts"]
+}

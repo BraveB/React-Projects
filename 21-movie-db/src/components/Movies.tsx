@@ -1,16 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
-const url =
-  "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png";
+import { url } from "../utils/constants";
+import { Movie } from "interfaces";
 
-const Movies = () => {
+export const Movies: FC = () => {
   const { movies, isLoading } = useGlobalContext();
   if (isLoading) return <div className="loading">Loading...</div>;
   return (
     <section className="movies">
-      {movies?.map((movie) => {
-        const { imdbID: id, Poster: poster, Title: title, Year: year } = movie;
+      {movies.map((movie: Movie) => {
+        const { id, poster, title, year } = movie;
         return (
           <Link to={`/movies/${id}`} key={id} className="movie">
             <article>
@@ -26,5 +26,3 @@ const Movies = () => {
     </section>
   );
 };
-
-export default Movies;

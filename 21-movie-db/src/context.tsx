@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
 import { useFetch } from "./hooks/useFetch";
+import { AppProviderProps, GlobalContext } from "interfaces";
+import { initialGlobalContext } from "utils";
 
-const AppContext = React.createContext();
+const AppContext = React.createContext<GlobalContext>(initialGlobalContext);
 
-const AppProvider = ({ children }) => {
+const AppProvider = ({ children }: AppProviderProps) => {
   const [query, setQuery] = useState("sup");
   const { isLoading, error, data: movies } = useFetch(`&s=${query}`);
   return (
@@ -12,7 +14,7 @@ const AppProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
-// make sure use
+
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };

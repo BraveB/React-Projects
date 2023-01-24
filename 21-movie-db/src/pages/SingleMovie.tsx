@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { FC } from "react";
 import { useParams, Link } from "react-router-dom";
-import { API_ENDPOINT, useFetch } from "./../hooks/useFetch";
+import { useFetch } from "hooks";
 
-const SingleMovie = () => {
+export const SingleMovie: FC = () => {
   const { id } = useParams();
   const { isLoading, error, data: movie } = useFetch(`&i=${id}`);
 
@@ -17,7 +17,7 @@ const SingleMovie = () => {
       </div>
     );
 
-  const { Poster: poster, Title: title, Plot: plot, Year: year } = movie;
+  const { poster, title, plot, year } = movie[0] || {};
   return (
     <section className="single-movie">
       <img src={poster} alt={title} />
@@ -32,5 +32,3 @@ const SingleMovie = () => {
     </section>
   );
 };
-
-export default SingleMovie;
